@@ -25,22 +25,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let matchingResults = [];
 
-        // Search logic for "beach"
-        if (searchQuery === "beach" || searchQuery === "beaches") {
-            matchingResults = recommendations.beaches.slice(0, 2); // Display at least 2 beach recommendations
+        // Search for "beaches"
+        if (searchQuery.includes("beach") || searchQuery.includes("beaches")) {
+            matchingResults = recommendations.beaches; // Fetch beach recommendations
         }
 
-        // Search logic for "temple"
-        else if (searchQuery === "temple" || searchQuery === "temples") {
-            matchingResults = recommendations.temples.slice(0, 2); // Display at least 2 temple recommendations
+        // Search for "temples"
+        else if (searchQuery.includes("temple") || searchQuery.includes("temples")) {
+            matchingResults = recommendations.temples; // Fetch temple recommendations
         }
 
-        // Search logic for "country"
-        else if (searchQuery === "country" || searchQuery === "countries") {
+        // Search for "countries"
+        else if (searchQuery.includes("country") || searchQuery.includes("countries")) {
             recommendations.countries.forEach(country => {
-                country.cities.slice(0, 2).forEach(city => {
-                    matchingResults.push(city); // Display at least 2 cities under countries
-                });
+                matchingResults = matchingResults.concat(country.cities); // Fetch all cities under each country
             });
         }
 
@@ -67,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 resultsDiv.appendChild(resultDiv);
             });
         } else {
-            // If no matches are found
+            // If no matches found
             resultsDiv.innerHTML = "<p>No recommendations found for your search.</p>";
         }
     });
@@ -80,9 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Clear button functionality
     document.getElementById("clearButton").addEventListener("click", () => {
-        // Clear the search input and results
         document.getElementById("searchInput").value = "";
         document.getElementById("results").innerHTML = ""; // Clear search results
-        console.log("Search input and results cleared"); // Log the action
     });
 });

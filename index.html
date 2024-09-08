@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Recommendations</title>
     <style>
+        /* Basic styles for navigation bar */
         nav {
             background-color: #333;
             overflow: hidden;
@@ -29,6 +30,39 @@
             padding: 6px;
             margin-right: 10px;
         }
+
+        /* Styling for background image and introduction section */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('your-background-image.jpg'); /* Replace with the path to your image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: black;
+            text-align: center;
+        }
+
+        /* Introduction section */
+        .intro {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for readability */
+            display: inline-block;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        .intro h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .intro p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* Styling for the search results container */
         .recommendation {
             margin-bottom: 20px;
             padding: 15px;
@@ -45,6 +79,7 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
@@ -53,10 +88,17 @@
             <input type="text" id="searchInput" placeholder="Search for recommendations...">
             <button type="button" id="searchButton">Search</button>
             <button type="button" id="resetButton">Reset</button>
-            <button type="button" id="clearButton">Clear</button> <!-- New Clear Button -->
+            <button type="button" id="clearButton">Clear</button> <!-- Clear Button -->
         </div>
     </nav>
-    
+
+    <!-- Introduction Section -->
+    <div class="intro">
+        <h1>Welcome to Travel Recommendations</h1>
+        <p>Explore the best travel destinations around the world with expert recommendations tailored to your needs. Whether you're looking for a sunny beach, a historical temple, or a bustling city, we have the perfect travel guide for you.</p>
+    </div>
+
+    <!-- Search Results Section -->
     <div id="results"></div>
 
     <script src="script.js"></script>
