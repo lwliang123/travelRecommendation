@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Recommendations</title>
     <style>
-        /* Basic styles for navigation bar */
         nav {
             background-color: #333;
             overflow: hidden;
@@ -30,20 +29,17 @@
             padding: 6px;
             margin-right: 10px;
         }
-        /* Styles for background image and introduction */
-        body {
-            background-image: url('your-background-image.jpg'); /* Add the path to your image */
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
+        .recommendation {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            max-width: 600px;
+            background-color: #f9f9f9;
         }
-        .intro {
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            padding: 20px;
-            margin-top: 50px;
-            display: inline-block;
+        .recommendation img {
+            max-width: 100%;
+            height: auto;
             border-radius: 10px;
         }
     </style>
@@ -54,15 +50,15 @@
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
         <div class="search-bar">
-            <input type="text" placeholder="Search for recommendations...">
-            <button type="button">Search</button>
-            <button type="button">Reset</button>
+            <input type="text" id="searchInput" placeholder="Search for recommendations...">
+            <button type="button" id="searchButton">Search</button>
+            <button type="button" id="resetButton">Reset</button>
+            <button type="button" id="clearButton">Clear</button> <!-- New Clear Button -->
         </div>
     </nav>
     
-    <div class="intro">
-        <h1>Welcome to Travel Recommendations</h1>
-        <p>Explore the best travel destinations around the world with our expert recommendations. Whether you're planning a tropical getaway, an adventure in the mountains, or a cultural city tour, we have everything you need to plan your perfect trip!</p>
-    </div>
+    <div id="results"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
